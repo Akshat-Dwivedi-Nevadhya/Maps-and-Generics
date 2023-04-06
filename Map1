@@ -1,0 +1,56 @@
+import java.util.*;
+import java.util.Iterator;
+
+
+public class Map1 {
+    public static void main(String[] args) {
+        HashMap hm = new HashMap();
+
+        hm.put(01,"Virat");
+        hm.put(02,"Rohan");
+        hm.put(03,"Rohan");
+       // System.out.println(hm);
+
+       //Accessing Objects in Map
+       HashMap hm2 = new HashMap();
+        hm2.put(1,"Rohan");
+        hm2.put(2,"Rohit");
+        hm2.put(3,"Ramesh");
+      //  System.out.println(hm2.get(2));
+       // Accessing Keys
+        Set keyset =  hm2.keySet();
+        Iterator itr = keyset.iterator();
+        while (itr.hasNext()){
+            System.out.println(itr.next());
+        }
+        //Getting Values
+        Collection values = hm2.values();
+        Iterator itr2 = values.iterator();
+        while(itr2.hasNext()){
+            System.out.println(itr2.next());
+        }
+
+        Set entry = hm2.entrySet();
+        Iterator itr3 = entry.iterator();
+        while(itr3.hasNext()){
+            Map.Entry data = (Map.Entry)itr3.next();
+            System.out.println(data.getKey() + ":" + data.getValue());
+        }
+
+        HashMap hm3 = new HashMap();
+        String address = "adjdjdj";
+        String name = "Akshat";
+        LinkedList ll = new LinkedList();
+        ll.add(address);ll.add(name);
+
+        hm3.put(1234567,ll);
+        hm3.put(12345678,ll);
+
+        Set entry2 = hm3.entrySet();
+        Iterator itr4 = entry2.iterator();
+        while(itr4.hasNext()){
+            Map.Entry data = (Map.Entry)itr4.next();
+            System.out.println(data.getKey() + ":" + data.getValue());
+        }
+    }
+}
