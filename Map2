@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+class Student{
+    String name;int age;String city;
+    public Student(String name,int age,String city){
+        this.age = age;
+        this.name = name;
+        this.city = city;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String toString(){
+        return this.name + " " + this.age + " " + this.city;
+    }
+}
+
+
+public class Map2 {
+    public static void main(String[] args) {
+        Student st1 = new Student("Akshat",15,"Agra");
+        Student st2 = new Student("Nevadhya",14,"Agra");
+
+        HashMap hm = new HashMap();
+        hm.put(1,st1);
+        hm.put(2,st2);
+
+      // System.out.println(hm);
+        Set entry = hm.entrySet();
+        Iterator itr = entry.iterator();
+        while (itr.hasNext()){
+            Map.Entry data= (Map.Entry)itr.next();
+            System.out.println(data.getKey() + " : " + data.getValue());
+        }
+    }
+
+}
