@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.*;
+
+//Using Generics in Classes
+class Gen<type>{
+    type obj;
+    public Gen(type obj){
+        this.obj = obj;
+    }
+    type getObj(){
+        return this.obj;
+    }
+    void disp(){
+        System.out.println("Class Info: " + obj.getClass().getName());
+    }
+}
+
+public class Generics {
+    public static void main(String[] args) {
+        Gen<Integer> g = new Gen<Integer>(10);
+        System.out.println(g.getObj());
+        g.disp();
+
+        System.out.println("***************************************");
+
+        Gen<String> g2 = new Gen<String>("Akshat");
+        g2.disp();
+        System.out.println(g2.getObj());
+
+
+        /*ArrayList<String> al = new ArrayList<String>();
+        List<String> al2 = new ArrayList<String>();
+        Collection<Integer> al3 = new ArrayList<Integer>();
+        ArrayList<String> al4 = new ArrayList<String>();*/
+    }
+}
